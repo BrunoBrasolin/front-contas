@@ -11,8 +11,13 @@ export default function Home() {
 	const handlePercentageSubmit = async (e: FormEvent) => {
 		e.preventDefault();
 
+		if (percentageValue == '') {
+			alert('Favor insira um valor válido!');
+			return;
+		}
+
 		try {
-			const response = await fetch(`http://168.75.82.21:82/api/conta?valor=${percentageValue}`, {
+			const response = await fetch(`http://168.75.82.21:81/api/conta?valor=${percentageValue}`, {
 				method: 'GET',
 				headers: {
 					'Content-Type': 'application/json',
