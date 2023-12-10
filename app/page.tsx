@@ -44,7 +44,14 @@ export default function Home() {
 			<form className="mb-6" onSubmit={handlePercentageSubmit}>
 				<label>
 					Cálculo porcentagem:
-					<input type="number" value={percentageValue} onChange={e => setPercentageValue(parseInt(e.target.value, 10) || '')} className="mt-1 p-2 border rounded-md w-full text-green-950" />
+					<input
+						type="text"
+						inputMode="numeric"
+						pattern="[0-9]*"
+						value={percentageValue}
+						onChange={e => setPercentageValue(parseInt(e.target.value, 10) || '')}
+						className="mt-1 p-2 border rounded-md w-full text-green-950"
+					/>
 				</label>
 
 				<div className="flex justify-between mt-5">
