@@ -38,29 +38,29 @@ export default function Home() {
 	};
 
 	return (
-		<main>
-			<div className="max-w-md mx-auto mt-8">
-				<form className="mb-6" onSubmit={handlePercentageSubmit}>
-					<label className="block text-sm font-medium">
-						Cálculo porcentagem:
-						<input type="number" value={percentageValue} onChange={e => setPercentageValue(parseInt(e.target.value, 10) || '')} className="mt-1 p-2 border rounded-md w-full text-green-950" />
-					</label>
+		<main className="container mx-auto px-4 max-w-md">
+			<h1 className="text-4xl my-6 text-teal-500">Contas</h1>
 
-					<div className="flex justify-between mt-5">
-						<button type="submit" className="px-4 py-2 rounded-md bg-teal-500 text-white">
-							Calcular
-						</button>
-						<button type="button" onClick={handleClear} className="ml-2 px-4 py-2 border rounded-md text-teal-500 border-teal-500">
-							Limpar
-						</button>
-					</div>
-				</form>
+			<form className="mb-6" onSubmit={handlePercentageSubmit}>
+				<label>
+					Cálculo porcentagem:
+					<input type="number" value={percentageValue} onChange={e => setPercentageValue(parseInt(e.target.value, 10) || '')} className="mt-1 p-2 border rounded-md w-full text-green-950" />
+				</label>
 
-				<div className="mb-12">
-					<h2>Valor de cada um:</h2>
-					<pre>Letícia: R${resultPercentage?.Leticia || '0,00'}</pre>
-					<pre>Bruno: R${resultPercentage?.Bruno || '0,00'}</pre>
+				<div className="flex justify-between mt-5">
+					<button type="submit" className="px-4 py-2 rounded-md bg-teal-500 text-white">
+						Calcular
+					</button>
+					<button type="button" onClick={handleClear} className="ml-2 px-4 py-2 border rounded-md text-teal-500 border-teal-500">
+						Limpar
+					</button>
 				</div>
+			</form>
+
+			<div className="mb-12">
+				<h2>Valor de cada um:</h2>
+				<pre>Letícia: R${resultPercentage?.Leticia || '0,00'}</pre>
+				<pre>Bruno: R${resultPercentage?.Bruno || '0,00'}</pre>
 			</div>
 		</main>
 	);
